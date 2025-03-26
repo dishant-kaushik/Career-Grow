@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Opportunities</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+        header {
+            background: #333;
+            color: white;
+            padding: 20px;
+        }
+        .job-listings, .apply-form {
+            width: 50%;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .job {
+            background: #eee;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+        button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Career Grow</h1>
+        <p>Find the career that suits you best</p>
+    </header>
+
+    <section class="job-listings">
+        <h2>Current Openings</h2>
+        <div class="job">
+            <h3>Software Engineer</h3>
+            <p>Location: Remote | Full-time</p>
+            <button onclick="applyNow('Software Engineer')">Apply Now</button>
+        </div>
+        <div class="job">
+            <h3>Data Analyst</h3>
+            <p>Location: New York | Full-time</p>
+            <button onclick="applyNow('Data Analyst')">Apply Now</button>
+        </div>
+        <div class="job">
+            <h3>ML Associate</h3>
+            <p>Location: San Fransisco| Full-time</p>
+            <button onclick="applyNow('ML Associcte')">Apply Now</button>
+        </div>
+    </section>
+
+    <section class="apply-form" id="applyForm">
+        <h2>Apply for a Job</h2>
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" required>
+
+            <label for="position">Position:</label>
+            <input type="text" id="position" required>
+
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+
+    <script>
+        function applyNow(position) {
+            document.getElementById('position').value = position;
+            document.getElementById('applyForm').scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
