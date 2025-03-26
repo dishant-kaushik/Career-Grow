@@ -17,6 +17,23 @@
             color: white;
             padding: 20px;
         }
+        nav {
+            background: #444;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            transition: background 0.3s;
+        }
+        nav a:hover {
+            background: #007bff;
+            border-radius: 5px;
+        }
         .job-listings, .apply-form {
             width: 50%;
             margin: 20px auto;
@@ -57,7 +74,14 @@
         <p>Find the career that suits you best</p>
     </header>
 
-    <section class="job-listings">
+    <nav>
+        <a href="#">Home</a>
+        <a href="#jobs">Jobs</a>
+        <a href="#apply">Apply</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <section class="job-listings" id="jobs">
         <h2>Current Openings</h2>
         <div class="job">
             <h3>Software Engineer</h3>
@@ -69,14 +93,9 @@
             <p>Location: New York | Full-time</p>
             <button onclick="applyNow('Data Analyst')">Apply Now</button>
         </div>
-        <div class="job">
-            <h3>ML Associate</h3>
-            <p>Location: San Fransisco| Full-time</p>
-            <button onclick="applyNow('ML Associcte')">Apply Now</button>
-        </div>
     </section>
 
-    <section class="apply-form" id="applyForm">
+    <section class="apply-form" id="apply">
         <h2>Apply for a Job</h2>
         <form>
             <label for="name">Name:</label>
@@ -95,7 +114,7 @@
     <script>
         function applyNow(position) {
             document.getElementById('position').value = position;
-            document.getElementById('applyForm').scrollIntoView({ behavior: 'smooth' });
+            document.getElementById('apply').scrollIntoView({ behavior: 'smooth' });
         }
     </script>
 </body>
